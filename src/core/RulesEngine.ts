@@ -304,7 +304,7 @@ export class RulesEngine {
         // Handle custom actions
         const actionFactory = this.settings.customActions[actionToExecute.name];
         const actionInstance = actionFactory();
-        actionResult = await actionInstance.run(actionToExecute.context || {}, ruleParameters);
+        actionResult = await actionInstance.run(actionToExecute.context || {}, ruleParameters, scopedParams);
       }
 
       result.actionResult = {

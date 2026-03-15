@@ -129,5 +129,9 @@ export enum NestedRuleExecutionMode {
  * Base class for custom actions
  */
 export abstract class ActionBase {
-  abstract run(context: ActionContext, ruleParameters: RuleParameter[]): Promise<any>;
+  abstract run(
+    context: ActionContext,
+    ruleParameters: RuleParameter[],
+    scopedParams?: { [key: string]: any }
+  ): Promise<any>;
 }
